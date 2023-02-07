@@ -1,0 +1,48 @@
+.labelName {
+  display: flex;
+  flex-direction: column;
+  border: 2 px solid black;
+  width: 350px;
+  height: 220px;
+}
+
+.spanName {
+  margin-bottom: 5px;
+  margin-top: 15px;
+  margin-left: 30px;
+}
+
+.imputName {
+  width: 150px;
+  margin-left: 30px;
+  border: 2px solid rgb(0, 255, 115);
+
+  border-radius: 4px;
+
+  outline: transparent;
+}
+
+.labelNumber {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.spanNumber {
+  margin: 15px 0px 5px 30px;
+}
+
+.buttonSubmit {
+  width: 120px;
+  margin-left: 30px;
+  margin-top: 25px;
+  border-style: none;
+
+  color: #fff;
+  background-color: cornflowerblue;
+  cursor: pointer;
+}
+
+.buttonSubmit:hover {
+  background-color: blue;
+}
