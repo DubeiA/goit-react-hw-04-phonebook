@@ -11,7 +11,7 @@ export function App() {
   const [contacts, setContacts] = useState(() => {
     return JSON.parse(window.localStorage.getItem('contacts')) ?? '';
   });
-  const [filter, setFilter] = useState('');
+  const [filterName, setFilter] = useState('');
 
   useEffect(() => { 
   window.localStorage.setItem('contacts' , JSON.stringify(contacts))
@@ -49,8 +49,9 @@ const formSubmitHandler = data => {
     )
    
   }
-  const normalizedFilter = filter.toLowerCase();
+  const normalizedFilter = filterName.toLowerCase();
   
+
   const visibleName = contacts.filter(contact => 
     contact.name.toLowerCase().includes(normalizedFilter))
 
@@ -72,7 +73,7 @@ const formSubmitHandler = data => {
 
         <h3>Contacts</h3>
 
-        <Filter value={filter} onChange={filterOnChange} />
+        <Filter value={filterName} onChange={filterOnChange} />
 
         <ContactList contacts={visibleName} onDeleteContact={deleteContacts} />
         
