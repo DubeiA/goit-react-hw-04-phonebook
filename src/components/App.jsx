@@ -7,20 +7,24 @@ import { nanoid } from 'nanoid'
 
 
 export function App() {
-  
-  const [contacts, setContacts] = useState([]);
+  const contactFirst = () => {
+    return JSON.parse(window.localStorage.getItem('contacts')) ?? '';
+  }
+  const [contacts, setContacts] = useState(contactFirst());
   const [filterName, setFilter] = useState('');
 
 
-  useEffect(() => {
-    let parsedContacts = [];
-    if (localStorage.getItem("contacts")) {
-      parsedContacts = JSON.parse(localStorage.getItem("contacts"));
-    }
-    if (parsedContacts.length !== 0) {
-      setContacts(parsedContacts);
-    }
-  }, []);
+  
+
+  // useEffect(() => {
+  //   let parsedContacts = [];
+  //   if (localStorage.getItem("contacts")) {
+  //     parsedContacts = JSON.parse(localStorage.getItem("contacts"));
+  //   }
+  //   if (parsedContacts.length !== 0) {
+  //     setContacts(parsedContacts);
+  //   }
+  // }, []);
 
   useEffect(() => { 
   window.localStorage.setItem('contacts' , JSON.stringify(contacts))
