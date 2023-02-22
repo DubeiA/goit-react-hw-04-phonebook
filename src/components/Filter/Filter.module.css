@@ -1,9 +1,18 @@
 .imputName {
+  display: flex;
+
   width: 150px;
-  margin-left: 30px;
+  /* margin-left: 30px; */
   border: 2px solid rgb(0, 255, 115);
 
   border-radius: 4px;
 
   outline: transparent;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-left: 20px;
 }
