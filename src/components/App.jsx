@@ -44,7 +44,7 @@ export function App() {
     setContacts(prevState => [addContacts, ...prevState]);
   };
   const normalizedFilter = filterName.toLowerCase();
-  console.log(contacts);
+
   const visibleName = contacts.filter(contact =>
     contact.name.toLowerCase().includes(normalizedFilter)
   );
