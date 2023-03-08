@@ -6,7 +6,7 @@ import { nanoid } from 'nanoid';
 
 export function App() {
   const contactFirst = () => {
-    return JSON.parse(window.localStorage.getItem('contacts')) ?? '';
+    return JSON.parse(window.localStorage.getItem('contacts')) ?? [];
   };
   const [contacts, setContacts] = useState(contactFirst());
   const [filterName, setFilter] = useState('');
@@ -44,10 +44,12 @@ export function App() {
     setContacts(prevState => [addContacts, ...prevState]);
   };
   const normalizedFilter = filterName.toLowerCase();
-
+  console.log(contacts);
   const visibleName = contacts.filter(contact =>
     contact.name.toLowerCase().includes(normalizedFilter)
   );
+
+  console.log(visibleName);
 
   return (
     <div>
